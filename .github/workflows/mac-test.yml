@@ -22,5 +22,5 @@ jobs:
     - name: Build macOS Binary
       run: go build -v -o bruncher-mac
 
-    - name: SSH Access for Live TUI Testing
-      uses: mxschmitt/action-tmate@v3
+    - name: Start Interactive Debug Session
+      uses: lhotari/action-upterm@v1
