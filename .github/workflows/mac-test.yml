@@ -22,5 +22,10 @@ jobs:
     - name: Build macOS Binary
       run: go build -v -o bruncher-mac
 
-    - name: Start Interactive Debug Session
-      uses: lhotari/action-upterm@v1
+    - name: Test Execution (Help Flag)
+      run: |
+        chmod +x bruncher-mac
+        ./bruncher-mac --help || true
+
+    - name: Verify Binary Format
+      run: file bruncher-mac
